@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitt første Javascript-program</title>
-    <!-- Stilarket ligger i dette dokumentet: -->
-    <link rel="stylesheet" href="stilark.css">
-</head>
-<body>
-    <!-- HTML-koden -->
-    <main>
-        <h1 id="overskrift">Mitt første JS-program</h1>
-        <p id="paragraf">
-            Her kan du for eksempel endre på bildet under ved å trykke på knappen.
-            Du kan også trykke på selve bildet for å gjøre det samme.
-        </p>
-        <br> <!-- Dette betyr linjeskift. -->
-        <img id="bilde" src="bilder/config.png" alt="" width="100px">
-        <br>
-        <p>
-            Trykk på denne fargevelgeren og bakgrunnsfargen 
-            for hele nettsider endrer seg! Se stilarket for hvordan vi får
-            det til å ta litt tid å endre seg.
-        </p>
-        <input id="fargevelger" type="color"> <!-- Fargevelgeren ser litt ulike ut på ulike maskiner, men fungerer likt. -->
-        <br><br>
-        <button id="knappEndreBilde">Bytte bilde</button>
-        <button id="knappStørre">Større bilde</button>
-        <button id="knappMindre">Mindre bilde</button>
-    </main>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mitt første Javascript-program</title>
+        <!-- Stilarket ligger i dette dokumentet: -->
+        <link rel="stylesheet" href="stilark.css">
+    </head>
+    <body>
+        <!-- HTML-koden -->
+        <main>
+            <h1 id="overskrift">Mitt første JS-program</h1>
+            <p id="paragraf">
+                Her kan du for eksempel endre på bildet under ved å trykke på knappen.
+                Du kan også trykke på selve bildet for å gjøre det samme.
+            </p>
+            <br> <!-- br betyr linjeskift (break). -->
+            <img id="bilde" src="bilder/config.png" alt="" width="100px">
+            <br>
+            <p>
+                Trykk på denne fargevelgeren og bakgrunnsfargen 
+                for hele nettsider endrer seg! Se stilarket for hvordan vi får
+                det til å ta litt tid å endre seg.
+            </p>
+            <input id="fargevelger" type="color"> <!-- Fargevelgeren ser litt ulike ut på ulike maskiner, men fungerer likt. -->
+            <br><br>
+            <button id="knappEndreBilde">Bytte bilde</button>
+            <button id="knappStørre">Større bilde</button>
+            <button id="knappMindre">Mindre bilde</button>
+        </main>
 
-    <!-- Koden ligger i dette dokumentet: -->
-    <script src="kode.js"></script>
-</body>
+        <!-- Koden ligger i dette dokumentet: -->
+        <script src="kode.js"></script>
+    </body>
 </html>
