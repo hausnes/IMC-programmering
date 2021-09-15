@@ -1,4 +1,4 @@
-console.log("Programmet fungerer.");
+console.log("Programmet fungerer."); // Vi tester at JS er koblet mot HTML
 
 //alert("Utskrift, alert!"); // Dette er en popup i nettleseren.
 
@@ -8,7 +8,7 @@ console.log("Programmet fungerer.");
 
 // Vi kan be brukeren om informasjon via et enkelt tekstfelt og bruke dette på nettsiden:
 let navn = prompt("Hva heter du?");
-document.getElementById("overskrift").innerHTML = "Hei, " + navn;
+document.getElementById("overskrift").innerHTML = "Hei, " + navn; // Endrer h1-taggen i HTML til "Hei, Jo Bjørnar" om jeg skrev inn navnet mitt.
 
 // Vi kan be brukeren om en farge og bruke denne ved å endre stilark
 //let fargevalg = prompt("Hva er din favorittfarge (svar på engelsk)?");
@@ -26,7 +26,7 @@ document.getElementById("bilde").addEventListener("click", endreBilde);
 
 let aktivtBilde = "config"; // Vi tar vare på info om hvilket bilde som vises først.
 
-// Her er selve funksjonen: Basert på hvilket bilde som vises fra før så endrer vi det.
+// Her er selve funksjonen endreBilde: Basert på hvilket bilde som vises fra før så endrer vi det.
 function endreBilde() {
     if(aktivtBilde=="config"){
         document.getElementById("bilde").src = "bilder/laptop.png";
