@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-else og prompt</title>
+</head>
+<body>
+    <!-- HTML -->
+    <h1 id="utskrift">
+        <!-- Fylles ut i JS-koden under. -->
+    </h1>
+    <img id="bilde" src="" alt="" width="400px"> <!-- Tomt bilde, vises i utg.pkt. ikke. -->
+
+    <!-- Kode -->
+    <script>
+        // Spør brukeren om hvor gammel h*n er og lagrer i variabelen 'alder':
+        var alder = prompt("Hvor gammel er du?");
+        // Sjekker alderen og viser bildet dersom brukeren er gammel nok
+        if(alder >= 18) {
+            console.log("Du er gammel nok!");
+            document.getElementById("utskrift").innerHTML = "Du er gammel nok!";
+            document.getElementById("bilde").src = "cat.webp";
+        }
+        else {
+            console.log("Siden er stengt for deg!");
+            document.getElementById("utskrift").innerHTML = "Siden er stengt for deg!";
+        }
+    </script>
+</body>
+</html>
