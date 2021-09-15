@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+.overskrift {
+    color: white;
+    background-color: black;
+    padding: 20px;
+}
+
+p {
+    color: black;
+    padding: 20px;
+}
+
+/* Dette er en klasse som kan gjenbrukes */
+.rammeRundtBilde {
+    border: black 5px solid;
+    padding: 20px;
+}
+
+.advarsel {
+    background-color: red;
+    color: white;
+    padding: 20px;
+}
+
+#midtstilt {
+    width: 800px;
+    background-color: white;
+    color: black;
+    margin: auto;
+}
+
+/* Midtstilling av bilder er litt spesielt. */
+.midtstiltBilde, iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 
+    Del av designet som sidestiller ulike "bokser".
+    Eksempelvis bildet av meg og teksten på siden, samt
+    de tre bildene nederst ("mine egenskaper").
+*/
+.sidestilt {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.sidestilt p { /* Korrigerer at også paragrafene ble midtjustert i innstillingen over. */
+    text-align: left;
+}

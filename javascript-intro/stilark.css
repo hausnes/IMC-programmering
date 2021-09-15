@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(207, 207, 207);
+    transition: 5s; /* Dette betyr at alle endringer, som å endre farge, vil ta 5 sek., noe som fører til en stilig, gradvis overgang. */
+}
+
+main {
+    width: 600px;
+    background-color: white;
+    border: black 2px solid;
+    padding: 20px;
+    margin: auto;
+}
