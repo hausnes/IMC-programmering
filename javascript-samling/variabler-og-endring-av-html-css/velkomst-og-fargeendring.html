@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> <!-- Tegntabell, for å støtte eks. æ, ø og å. -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mitt første Javascript-program</title>
+        <!-- Stilarket ligger i dette dokumentet: -->
+        <link rel="stylesheet" href="stilark.css">
+        <style>
+            body {
+                background-color: white); color: black;
+                transition: 5s; /* Dette betyr at alle endringer, som å endre farge, vil ta 5 sek., noe som fører til en stilig, gradvis overgang. */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HTML-koden -->
+        <h1 id="velkomst">
+            <!-- Fylles ut i JS. -->
+        </h1>
+
+        <label for="fargeBakgrunn">Bakgrunnsfarge: </label>
+        <input id="fargeBakgrunn" type="color"> <!-- Fargevelgeren ser litt ulike ut på ulike maskiner, men fungerer likt. -->
+        <label for="fargeTekst">Skriftfarge: </label>
+        <input id="fargeTekst" type="color">
+
+        <!-- Koden: -->
+        <script>
+            // Spør hvem som besøker siden og skriver en velkomst ut
+            let navnPåBesøkende = prompt("Hva heter du?");
+            document.getElementById("velkomst").innerHTML = "Velkommen, " + navnPåBesøkende + "!";
+
+            // Lar oss endre bakgrunnsfargen på hele dokumentet etter at brukeren har valgt en farge i fargevelgeren
+            document.getElementById("fargeBakgrunn").onchange = function() {
+                document.body.style.background = document.getElementById("fargeBakgrunn").value; 
+            }
+
+            // Lar oss endre skriftfargen på hele nettsiden etter at brukeren har valgt en farge i fargevelgeren
+            document.getElementById("fargeTekst").onchange = function() {
+                document.body.style.color = document.getElementById("fargeTekst").value; 
+            }
+        </script>
+    </body>
+</html>
