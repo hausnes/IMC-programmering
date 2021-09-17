@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terningkast</title>
+</head>
+<body>
+    <ul id="resultatUt">
+        <!-- Her kommer resultatene etter at JS har kjørt. -->
+    </ul>
+    
+    <!-- Kode -->
+    <script>
+        let antallTerningkast = 5;
+        let antallPrikkerPåTerningen = 6;
+
+        for (let i = 1; i <= antallTerningkast; i++) {
+            console.log("Terningkast nr. " + i + " er: " + getRandomIntInclusive(1,antallPrikkerPåTerningen));
+            document.getElementById("resultatUt").innerHTML += "<li>Terningkast nr. " + i + " er: " + getRandomIntInclusive(1,antallPrikkerPåTerningen) + "</li>";
+        }
+
+        // Denne koden er hentet fra: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+        }
+    </script>
+</body>
+</html>
