@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gjettespill</title>
+    <style>
+        p { text-align: center; padding: 20px; background-color: black; color: white; font-size: 3em; }
+    </style>
+</head>
+<body>
+    <p id="utskrift">
+        <!-- Her kommer utskrift fra JS-koden. -->
+    </p>
+
+    <!-- Koden: -->
+    <script>
+        let riktigTall = 6; // Dersom du vil bestemme selv
+        //let riktigTall = Math.floor(Math.random() * 11);
+        let gjettetTall = prompt("Gjett på et tall ml. 0 og 10:");
+        
+        if(gjettetTall == riktigTall) {
+            let resultat = "Riktig! Du gjettet " + gjettetTall + " og riktig svar var " + riktigTall + ".";
+            console.log(resultat);
+            document.getElementById("utskrift").innerHTML = resultat;
+        }
+        else {
+            let resultat = "Feil! Du gjettet " + gjettetTall + " og riktig svar var " + riktigTall + ".";
+            console.log(resultat);
+            document.getElementById("utskrift").innerHTML = resultat;
+        }
+
+        // NB: Ser du noe som blir tungvint her? Mer spesifikt, må du skrive mye kode som er ganske lik?
+        // Hva hvis vi legger inn mange flere alternativ i if-else? Hint: Funksjoner.
+    </script>
+</body>
+</html>
