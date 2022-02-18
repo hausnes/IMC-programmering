@@ -1,4 +1,4 @@
-const alfabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ,.!";
+const alfabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ,.! ";
 
 function krypterBokstav(bokstav,nokkel) { // bokstav = bokstaven som skal krypteres, key = hvor stor forskyvning
     let posisjon = alfabet.indexOf(bokstav);
