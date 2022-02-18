@@ -1,24 +1,31 @@
-const alfabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ,.-_!?";
+const alfabet = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ,.!";
 
-function krypter(bokstav, nokkel) {
-    posisjon = alfabet.indexOf(bokstav);
-    posisjonNy = posisjon + nokkel;
-    
-    if(posisjonNy >= alfabet.length){
+function krypterBokstav(bokstav,nokkel) { // bokstav = bokstaven som skal krypteres, key = hvor stor forskyvning
+    let posisjon = alfabet.indexOf(bokstav);
+    let posisjonNy = posisjon + nokkel;
+    if(posisjonNy >= alfabet.length) {
         posisjonNy = posisjonNy - alfabet.length;
     }
-
     return alfabet[posisjonNy];
 }
 
-console.log(krypter("a",1));
+let setning = "Kryptering er gøy, assa!";
+let kryptertSetning = "";
 
-let setning = "ABC";
-let resultat = "";
-
-for(let bokstav of setning) {
-    console.log(bokstav);
-    resultat += krypter(bokstav,1);
+for (let bokstav of setning) {
+    kryptertSetning = kryptertSetning + krypterBokstav(bokstav,1);
 }
 
-console.log("Kryptert melding: " + resultat);
+console.log(kryptertSetning);
+
+/*
+let tid = new Date();
+console.log(tid.getDate());
+*/
+
+document.getElementById("skjema").addEventListener("submit", krypterSetning);
+
+function krypterSetning(evt) {
+    evt.preventDefault();
+    console.log("SKJEMA FUNGERER!");
+}
