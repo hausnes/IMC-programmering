@@ -12,16 +12,22 @@ body {
     background-color: aquamarine;
 }
 
-form {
+#skjema {
     background-color: white;
     padding: 20px;
     border: 2px solid black;
 }
 
 textarea {
-    width: 500px;
+    width: 485px;
     height: 200px;
     font-size: 1.5em;
+    padding: 10px;
+}
+
+input {
+    width: 485px;
+    padding: 10px;
 }
 
 button {
@@ -29,4 +35,11 @@ button {
     height: 50px;
     font-size: 1.5em;
     margin-bottom: 10px;
+}
+
+#utskrift {
+    width: 490px;
+    background-color: rgb(223, 223, 223);
+    padding: 10px;
+    word-break: break-word; 
 }

@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="stilark.css">
 </head>
 <body>
-    <form id="skjema">
+    <div id="skjema">
         <textarea type="text" id="tekst" placeholder="Fyll ut teksten du vil kryptere." required></textarea>
+        <br>
+        <input type="number" id="krypteringsnokkel" required placeholder="Skriv inn krypteringsnøkkelen du ønsker å bruke">
         <br>
         <button id="knappKrypter">Krypter tekst!</button><br>
         <button id="knappDekrypter">Dekrypter tekst!</button>
-        <p id="utskrift"></p>
-    </form>
+        <p id="utskrift">Resultatet kommer her...</p>
+    </div>
     
     <script src="kryptering.js"></script>
 </body>

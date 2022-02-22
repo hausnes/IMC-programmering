@@ -23,21 +23,20 @@ let tid = new Date();
 console.log(tid);
 */
 
-document.getElementById("skjema").addEventListener("submit", krypterSetning);
+document.getElementById("knappKrypter").addEventListener("click", krypterSetning);
 
-function krypterSetning(evt) {
-    evt.preventDefault();
-   
-    //let setning = "abc Jo Bjørnar Hausnes";
+function krypterSetning() {
     let setning = document.getElementById("tekst").value;
     let kryptertSetning = "";
+    let krypteringsnokkel = parseInt(document.getElementById("krypteringsnokkel").value);
 
     for (let bokstav of setning) {
-        kryptertSetning = kryptertSetning + krypterBokstav(bokstav,1);
+        kryptertSetning = kryptertSetning + krypterBokstav(bokstav,krypteringsnokkel);
     }
 
-    console.log(kryptertSetning);
-    document.getElementById("utskrift").innerHTML = kryptertSetning;
+    console.log("Krypter setning køyrer!");
+    console.log("Kryptert setning: " + kryptertSetning);
+    document.getElementById("utskrift").innerHTML = "Kryptert setning: " + kryptertSetning;
 }
 
 document.getElementById("knappDekrypter").addEventListener("click", dekrypterSetning);
@@ -45,16 +44,15 @@ document.getElementById("knappDekrypter").addEventListener("click", dekrypterSet
 function dekrypterSetning() {
     let setning = document.getElementById("tekst").value;
     let dekryptertSetning = "";
+    let krypteringsnokkel = parseInt(document.getElementById("krypteringsnokkel").value);
 
     for (let bokstav of setning) {
-        dekryptertSetning = dekryptertSetning + dekrypterBokstav(bokstav,1);
+        dekryptertSetning = dekryptertSetning + dekrypterBokstav(bokstav,krypteringsnokkel);
     }
 
     console.log("Dekrypter setning køyrer!");
-    document.getElementById("utskrift").innerHTML = "O_:_:_:_:_:_:_:_:_:_:_OWHEF";
     console.log("Dekryptert setning: " + dekryptertSetning);
     document.getElementById("utskrift").innerHTML = "Dekryptert setning " +  dekryptertSetning;
 }
 
 //console.log(dekrypterBokstav("å",1));
-document.getElementById("utskrift").innerHTML = "OIHWEFWIOHEFWIOHEFUIOWHEF";
