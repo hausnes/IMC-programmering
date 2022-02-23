@@ -24,19 +24,30 @@ console.log(tid);
 */
 
 document.getElementById("knappKrypter").addEventListener("click", krypterSetning);
+//document.getElementById("tekst").addEventListener("input",krypterSetning);
 
 function krypterSetning() {
     let setning = document.getElementById("tekst").value;
     let kryptertSetning = "";
     let krypteringsnokkel = parseInt(document.getElementById("krypteringsnokkel").value);
+    console.log(krypteringsnokkel.length);
 
-    for (let bokstav of setning) {
-        kryptertSetning = kryptertSetning + krypterBokstav(bokstav,krypteringsnokkel);
+    /*
+    if (krypteringsnokkel == 0) {
+        alert("DETTE BLEI IKKJE GODT KRYPTERT, DUST!");
+    } */
+    if (isNaN(krypteringsnokkel)) {
+        alert("Du må hugse å skrive inn kva krypteringsnøkkel du ynskjer!");
     }
-
-    console.log("Krypter setning køyrer!");
-    console.log("Kryptert setning: " + kryptertSetning);
-    document.getElementById("utskrift").innerHTML = "Kryptert setning: " + kryptertSetning;
+    else {
+        for (let bokstav of setning) {
+            kryptertSetning = kryptertSetning + krypterBokstav(bokstav,krypteringsnokkel);
+        }
+    
+        console.log("Krypter setning køyrer!");
+        console.log("Kryptert setning: " + kryptertSetning);
+        document.getElementById("utskrift").innerHTML = "Kryptert setning: " + kryptertSetning;
+    }
 }
 
 document.getElementById("knappDekrypter").addEventListener("click", dekrypterSetning);
@@ -46,13 +57,18 @@ function dekrypterSetning() {
     let dekryptertSetning = "";
     let krypteringsnokkel = parseInt(document.getElementById("krypteringsnokkel").value);
 
-    for (let bokstav of setning) {
-        dekryptertSetning = dekryptertSetning + dekrypterBokstav(bokstav,krypteringsnokkel);
+    if (isNaN(krypteringsnokkel)) {
+        alert("Du må hugse å skrive inn kva krypteringsnøkkel du ynskjer!");
     }
-
-    console.log("Dekrypter setning køyrer!");
-    console.log("Dekryptert setning: " + dekryptertSetning);
-    document.getElementById("utskrift").innerHTML = "Dekryptert setning " +  dekryptertSetning;
+    else {
+        for (let bokstav of setning) {
+            dekryptertSetning = dekryptertSetning + dekrypterBokstav(bokstav,krypteringsnokkel);
+        }
+    
+        console.log("Dekrypter setning køyrer!");
+        console.log("Dekryptert setning: " + dekryptertSetning);
+        document.getElementById("utskrift").innerHTML = "Dekryptert setning " +  dekryptertSetning;
+    }
 }
 
 //console.log(dekrypterBokstav("å",1));
