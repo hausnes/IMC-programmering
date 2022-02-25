@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0; margin: 0;
+        }
+        body {
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #midtstilt {
+            width: 600px;
+            border: 2px solid black;
+            background-color: white;
+            padding: 20px;
+        }
+
+        #midtstilt img {
+            max-width: 100%;
+        }
+
+        .grow { transition: all .2s ease-in-out; }
+        .grow:hover { transform: scale(1.5); } /* https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/ */
+    </style>
+</head>
+<body>
+    <div id="midtstilt" class="grow grow:hover">
+        <img src="https://gfx.nrk.no/cNCx7p09bmsEMoTGK7cYHQj255uNT1IV-BU1qwTx84ZA.jpg" alt="">
+        <p>Putin, Putin, Putin...</p>
+    </div>
+</body>
+</html>
