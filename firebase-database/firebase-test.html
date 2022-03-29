@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test av <em>Firebase</em></h1>
+    <p id="utskrift"></p>
+    
+    <script type="module">
+        const utskrift = document.getElementById("utskrift");
+
+        // Import the functions you need from the SDKs you need      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use      
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getFirestore, collection, doc, addDoc, setDoc, getDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"
+      
+        // Your web app's Firebase configuration    
+        const firebaseConfig = {      
+          apiKey: "AIzaSyDmyvLp0O9dKJwpmVT0zLM-g2S0SohnEwk",      
+          authDomain: "imc-firebase-f037d.firebaseapp.com",      
+          databaseURL: "https://imc-firebase-f037d-default-rtdb.europe-west1.firebasedatabase.app",      
+          projectId: "imc-firebase-f037d",      
+          storageBucket: "imc-firebase-f037d.appspot.com",      
+          messagingSenderId: "505978618487",     
+          appId: "1:505978618487:web:15c523adfb0ce5f8c23c72"
+        };
+      
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore();
+
+        /*
+        //Legger inn et nytt dokument i samlingen "elever".
+        await addDoc(collection(db, "elever"), {
+            fornavn: "Jo Bjørnar",
+            etternavn: "Hausnes",
+            telefon: "12345678"
+        });
+
+        //Legger inn et nytt dokument i samlingen "elever".
+        await setDoc(doc(db, "elever", "nilja"), {
+            fornavn: "Jakob",
+            etternavn: "Nilsen",
+            epost: "jakob@nilsen.net"
+        });
+        */
+
+        // Lesing
+        const docSnap = await getDoc(doc(db, "elever", "nilja"));
+        console.log("Document data:", docSnap.data());
+
+        const snapshot = await getDocs(collection(db, "elever"));
+            snapshot.forEach((doc) => {
+                utskrift.innerHTML += doc.data().fornavn + ", " + doc.data().etternavn + "<br>";
+                console.log(doc.data().fornavn + doc.data().etternavn);
+        });
+      </script>
+</body>
+</html>
