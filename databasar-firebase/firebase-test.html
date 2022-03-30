@@ -35,22 +35,25 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore();
 
-        /*
         //Legger inn et nytt dokument i samlingen "elever".
+        /*
         await addDoc(collection(db, "elever"), {
             fornavn: "Jo Bjørnar",
             etternavn: "Hausnes",
             telefon: "12345678"
         });
+        */
 
+        /*
         //Legger inn et nytt dokument i samlingen "elever".
         await setDoc(doc(db, "elever", "nilja"), {
             fornavn: "Jakob",
-            etternavn: "Nilsen",
+            etternavn: "NilsenAPPAPPAPPAPP",
             epost: "jakob@nilsen.net"
         });
         */
 
+        /*
         // Lesing
         const docSnap = await getDoc(doc(db, "elever", "nilja"));
         console.log("Document data:", docSnap.data());
@@ -60,6 +63,7 @@
                 utskrift.innerHTML += doc.data().fornavn + ", " + doc.data().etternavn + "<br>";
                 console.log(doc.data().fornavn + doc.data().etternavn);
         });
+        */
       </script>
 </body>
 </html>
