@@ -22,8 +22,8 @@
         // Your web app's Firebase configuration    
         const firebaseConfig = {      
           apiKey: "AIzaSyDmyvLp0O9dKJwpmVT0zLM-g2S0SohnEwk",      
-          authDomain: "imc-firebase-f037d.firebaseapp.com",      
-          databaseURL: "https://imc-firebase-f037d-default-rtdb.europe-west1.firebasedatabase.app",      
+          authDomain: "imc-firebase-f037d.firebaseapp.com",     
+          //databaseURL: "https://imc-firebase-f037d-default-rtdb.europe-west1.firebasedatabase.app",  // Berre aktuel for realtime databases    
           projectId: "imc-firebase-f037d",      
           storageBucket: "imc-firebase-f037d.appspot.com",      
           messagingSenderId: "505978618487",     
@@ -53,17 +53,17 @@
         });
         */
 
-        /*
+        
         // Lesing
-        const docSnap = await getDoc(doc(db, "elever", "nilja"));
-        console.log("Document data:", docSnap.data());
+        //const docSnap = await getDoc(doc(db, "elever", "nilja"));
+        //console.log("Document data:", docSnap.data());
 
         const snapshot = await getDocs(collection(db, "elever"));
             snapshot.forEach((doc) => {
                 utskrift.innerHTML += doc.data().fornavn + ", " + doc.data().etternavn + "<br>";
                 console.log(doc.data().fornavn + doc.data().etternavn);
         });
-        */
+        
       </script>
 </body>
 </html>
