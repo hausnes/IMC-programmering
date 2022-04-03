@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase-chat</title>
+    <style>
+        .melding {
+            border: 2px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+    </style>
 </head>
 <body>
     <form id="skjema">
@@ -59,10 +66,14 @@
         }
 
         async function viseMeldingar() {
+            utskrift.innerHTML = "";
             const snapshot = await getDocs(collection(db, "chat")); // , orderBy("tid")
                 snapshot.forEach((doc) => {
-                    utskrift.innerHTML += "<p>" + doc.data().navn + ", " + doc.data().melding + "</p>";
-                    console.log(doc.data().navn + doc.data().melding);
+                    //utskrift.innerHTML += "<p>" + doc.data().navn + ", " + doc.data().melding + "</p>";
+                    let melding = "<div class='melding'><p>" + doc.data().navn + "</p>";
+                    melding += "<p>" + doc.data().melding + "</p>";
+                    melding += "<p>" + doc.data().tid + "</p></div>";
+                    utskrift.innerHTML += melding;
                 });
         }
         
