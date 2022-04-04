@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase-chat</title>
+    <style>
+        .melding {
+            border: 2px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+    <form id="skjema">
+        <input type="text" id="navn" placeholder="Ditt navn" required>
+        <input type="text" id="melding" placeholder="Din melding" required>
+        <button type="submit">Send melding</button>
+    </form>
+    <div id="utskrift">
+
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use      
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getFirestore, collection, doc, addDoc, setDoc, getDoc, getDocs, query, where, orderBy } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"
+
+        // Your web app's Firebase configuration    
+        const firebaseConfig = {      
+            apiKey: "AIzaSyDmyvLp0O9dKJwpmVT0zLM-g2S0SohnEwk",      
+            authDomain: "imc-firebase-f037d.firebaseapp.com",      
+            //databaseURL: "https://imc-firebase-f037d-default-rtdb.europe-west1.firebasedatabase.app", // Berre aktuell for realtime databases      
+            projectId: "imc-firebase-f037d",      
+            storageBucket: "imc-firebase-f037d.appspot.com",      
+            messagingSenderId: "505978618487",     
+            appId: "1:505978618487:web:15c523adfb0ce5f8c23c72"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore();
+
+        const skjema = document.getElementById("skjema");
+        skjema.addEventListener("submit", sendMelding);
+
+        async function sendMelding(evt) {
+            evt.preventDefault();
+            
+            const navn = document.getElementById("navn").value;
+            const melding = document.getElementById("melding").value;
+            const tid = new Date().toLocaleString();
+            
+            //Legger inn et nytt dokument i samlingen "elever".
+            await addDoc(collection(db, "chat"), {
+                navn: navn,
+                melding: melding,
+                tid: tid
+            });
+
+            viseMeldingar();
+        }
+
+        async function viseMeldingar() {
+            const sporringMeldinger = await getDocs(
+                query(
+                    collection(db, "chat"), 
+                    orderBy("tid", "asc")
+                )
+            ); 
+
+            sporringMeldinger.forEach(async melding => {
+                const meldingElement = document.createElement("div");
+                meldingElement.classList.add("melding");
+                meldingElement.innerHTML = `
+                    <h3>${melding.data().navn}</h3>
+                    <p>${melding.data().melding}</p>
+                    <p>${melding.data().tid}</p>
+                `;
+                document.getElementById("utskrift").appendChild(meldingElement);
+            });
+        }
+        
+        const utskrift = document.getElementById("utskrift");
+
+        viseMeldingar();
+    </script>
+</body>
+</html>
+</body>
+</html>
