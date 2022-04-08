@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spillboks {
+    width: 800px;
+    height: 800px;
+    border: 1px solid #000;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#spillbrett {
+    width: 800px;
+    height: 600px;
+    background: url('bileter/bakgrunn-amalieskram.jpg');
+    background-size: cover;
+}
+
+#helse {
+    width: 800px;
+    height: 100px;
+    background-color: bisque;
+}
+
+#gui {
+    width: 800px;
+    height: 100px;
+    background-color: aqua;
+}
