@@ -30,11 +30,68 @@ body {
 #helse {
     width: 800px;
     height: 100px;
-    background-color: bisque;
+    background-color: rgb(255, 245, 233);
+    font-size: 3em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#helseHelt, #helseBoss { 
+    border: 1px solid black; 
+    padding: 0.25em; 
 }
 
 #gui {
     width: 800px;
     height: 100px;
     background-color: aqua;
+    font-size: 3em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#helt {
+    left: 30px;
+    top: 250px;
+    border: 1px solid red; /* For å kunne sjå "hitbox" når du jobbar med plassering. Kommenter ut linja dersom du ikkje treng den lenger. */
+}
+
+#boss { 
+    left: 350px;
+    top: 250px;
+    border: 1px solid red;
+}
+
+#helt, #boss {
+    position: relative;
+}
+
+/* 
+    ANIMASJONAR:
+    Generelt om animasjonar: https://www.w3schools.com/css/css3_animations.asp 
+*/
+
+/* Animasjon for angrep frå helt. */
+@keyframes heltAngrip {
+    0%   {left:30px;}
+    50%  {left:350px;}
+    100% {left:30px;}
+}
+
+@keyframes heltIdle {
+    100% { left:30px; }
+}
+
+.animasjonHeltAngrip {
+    animation: heltAngrip 2s linear;
+}
+
+.animasjonHeltIdle {
+    animation: heltIdle 1s linear;
 }
