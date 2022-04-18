@@ -83,15 +83,29 @@ body {
     50%  {left:350px;}
     100% {left:30px;}
 }
-
-@keyframes heltIdle {
-    100% { left:30px; }
-}
-
 .animasjonHeltAngrip {
     animation: heltAngrip 2s linear;
 }
 
-.animasjonHeltIdle {
-    animation: heltIdle 1s linear;
+/* Animasjon for at helsa blinkar etter angrep */
+@keyframes blinkHelse {
+    0%   { 
+        border: 1px solid black;
+        background-color: red;
+    }
+    50%  {
+        border: 1px solid red;
+        background-color: black;
+        color: white;
+
+    }
+    100% {
+        border: 1px solid black;
+        background-color: red;
+
+    }
+}
+
+.animasjonBlinkHelse {
+    animation: blinkHelse 2s linear;
 }
