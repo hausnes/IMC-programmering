@@ -16,8 +16,6 @@ knappAngrip.addEventListener("click", function(e) {
     if (hpBoss <= 0) {
         // Handter seier
     } else {
-        helseBoss.innerHTML = "HP: " + hpBoss;
-        
         // Startar animasjonen som skal indikere eit angrep
         animer(heltBilde,"animasjonHeltAngrip");
         /* Alternativt: 
@@ -26,18 +24,30 @@ knappAngrip.addEventListener("click", function(e) {
         heltBilde.classList.add("animasjonHeltAngrip");
         */
 
-        // Blinkar rundt HP for å indikere at bossen mistar liv
-        animer(helseBoss,"animasjonBlinkHelse");
+        // Blinkar rundt HP for å indikere at bossen mistar liv, ventar 1 sek (1000 ms) før denne køyrer
+        window.setTimeout(function() {
+            animer(helseBoss,"animasjonBlinkHelse");
+            helseBoss.innerHTML = "HP: " + hpBoss;
+        }, 1000);
 
-        let skadeFraBoss = getRandomIntInclusive(5,10);
-        hpHelt -= skadeFraBoss;
-        if (hpHelt <= 0) {
+        // Etter at helten har angripe så angrip bossen automatisk
+        window.setTimeout(function() {
+            let skadeFraBoss = getRandomIntInclusive(5,10);
+            hpHelt -= skadeFraBoss;
+            if (hpHelt <= 0) {
+                
+            } else {
+                window.setTimeout(function() {
+                    helseHelt.innerHTML = "HP: " + hpHelt;
+                }, 1000);
+            }
             
-        } else {
-            helseHelt.innerHTML = "HP: " + hpHelt;
-        }
-        
-        animer(helseHelt, "animasjonBlinkHelse");
+            animer(bossBilde,"animasjonBossAngrip");
+        }, 2000);
+
+        window.setTimeout(function() {
+            animer(helseHelt, "animasjonBlinkHelse");
+        }, 3000);
     }
 }, false);
 

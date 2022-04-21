@@ -87,6 +87,16 @@ body {
     animation: heltAngrip 2s linear;
 }
 
+/* Animasjon for angrep frå boss. */
+@keyframes bossAngrip {
+    0%   {left:350px;}
+    50%  {left:30px;}
+    100% {left:350px;}
+}
+.animasjonBossAngrip {
+    animation: bossAngrip 2s linear;
+}
+
 /* Animasjon for at helsa blinkar etter angrep */
 @keyframes blinkHelse {
     0%   { 
