@@ -72,6 +72,15 @@ body {
     position: relative;
 }
 
+#angrip, #heal {
+    padding: 20px;
+    cursor: grabbing;
+}
+
+#angrip:hover, #heal:hover {
+    background-color: red;
+}
+
 /* 
     ANIMASJONAR:
     Generelt om animasjonar: https://www.w3schools.com/css/css3_animations.asp 
