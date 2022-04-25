@@ -1,8 +1,8 @@
-const heltBilde = document.getElementById("helt");
-const bossBilde = document.getElementById("boss");
+const heltBilde   = document.getElementById("helt");
+const bossBilde   = document.getElementById("boss");
 const knappAngrip = document.getElementById("angrip");
-const helseHelt = document.getElementById("helseHelt");
-const helseBoss = document.getElementById("helseBoss");
+const helseHelt   = document.getElementById("helseHelt");
+const helseBoss   = document.getElementById("helseBoss");
 
 let hpHelt = 120;
 let hpBoss = 260;
