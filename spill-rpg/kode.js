@@ -15,7 +15,11 @@ knappAngrip.addEventListener("click", function(e) {
     hpBoss -= skade;
     if (hpBoss <= 0) {
         // Handter seier
-    } else {
+    } 
+    else if (hpHelt <= 0) {
+        // Handter død
+    } 
+    else {
         // Startar animasjonen som skal indikere eit angrep
         animer(heltBilde,"animasjonHeltAngrip");
         /* Alternativt: 
