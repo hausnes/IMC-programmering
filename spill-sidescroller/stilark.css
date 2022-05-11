@@ -1,0 +1,22 @@
+/*
+    Kilde: https://levelup.gitconnected.com/creating-a-simple-2d-game-with-html5-javascript-889aa06035ef
+*/
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    height:100%;
+    width:100%;
+}
+
+body {
+    align-content:space-around;
+    background-color:#545f5f;
+    color:#FBF5F3;
+    display:grid;
+    justify-content:center;
+}
