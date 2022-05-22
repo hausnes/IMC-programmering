@@ -3,6 +3,7 @@
 */
 
 const context = document.querySelector("canvas").getContext("2d");
+context.font = "30px sans-serif";
 
 context.canvas.height = 400;
 context.canvas.width = 1220;
@@ -135,6 +136,27 @@ const loop = function () {
     context.fill();
   });
 
+  // if square is touching an obstacle
+  obXCoors.forEach((obXCoor) => {
+    if (square.x + square.width > obXCoor && square.x < obXCoor + 20) {
+      if (square.y + square.height > 510 - height && square.y < 510 - height) {
+        square.y = 510 - height - square.height;
+        square.yVelocity = 0;
+        alert("Game Over");
+        square.x = 0; 
+      }
+    }
+
+    // if square is touching the floor
+    console.log("square.y:" + square.y + " 510 - height:" + (510 - height));
+    if (square.y > 510 - height && square.x == obXCoor - square.width) {
+      square.y = 500 - square.height;
+      alert("sniking langs bakken hjelper ikkje.");
+      square.x = 0;
+    }
+  });
+
+  
 
   // Creates the "ground" for each frame
   context.strokeStyle = "#2E2532";
@@ -143,6 +165,9 @@ const loop = function () {
   context.moveTo(0, 385);
   context.lineTo(1220, 385);
   context.stroke();
+
+  
+  context.fillText(`Score: ${frameCount}`, 10, 30);
 
   // call update when the browser is ready to draw again
   window.requestAnimationFrame(loop);
