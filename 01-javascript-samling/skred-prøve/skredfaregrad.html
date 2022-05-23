@@ -26,11 +26,11 @@
 
     <script>
         // show the value of the range input
-        document.getElementById("grad").oninput = function() {
+        document.getElementById("grad").addEventListener("input", function() {
             console.log(this.value);
             document.getElementById("utskrift").innerHTML = this.value;
             document.body.style.backgroundColor = verdiTilFarge(this.value);
-        }
+        });
 
         function verdiTilFarge(verdi) {
             if (verdi == 1) {
@@ -44,6 +44,11 @@
             } else if (verdi == 5) {
                 return "red";
             }
+        }
+
+        window.onload = function() {
+            document.getElementById("utskrift").innerHTML = document.getElementById("grad").value;
+            document.body.style.backgroundColor = verdiTilFarge(document.getElementById("grad").value);
         }
     </script>
 </body>
