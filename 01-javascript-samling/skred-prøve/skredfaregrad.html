@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skredfaregrad</title>
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        form {
+            width: 200px;
+            padding: 1rem;
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <form id="formGrad">
+        <label for="grad">Skredfaregrad:</label>
+        <em id="utskrift"></em>
+        <br>
+        <input type="range" min="1" max="5" id="grad" name="grad" placeholder="Skredfaregrad">
+    </form>
+
+    <script>
+        // show the value of the range input
+        document.getElementById("grad").oninput = function() {
+            console.log(this.value);
+            document.getElementById("utskrift").innerHTML = this.value;
+            document.body.style.backgroundColor = verdiTilFarge(this.value);
+        }
+
+        function verdiTilFarge(verdi) {
+            if (verdi == 1) {
+                return "lightgreen";
+            } else if (verdi == 2) {
+                return "green";
+            } else if (verdi == 3) {
+                return "yellow";
+            } else if (verdi == 4) {
+                return "orange";
+            } else if (verdi == 5) {
+                return "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -77,11 +77,14 @@ def computer_move():
                     move=mv
                     break
     return make_move(board, computer, move)
+
 def space_exist():
     return board.count('X') + board.count('O') != 9
+
 player, computer = select_char()
 print('Player is [%s] and computer is [%s]' % (player, computer))
 result='%%% Deuce ! %%%'
+
 while space_exist():
     print_board()
     print('#Make your move ! [1-9] : ', end='')
