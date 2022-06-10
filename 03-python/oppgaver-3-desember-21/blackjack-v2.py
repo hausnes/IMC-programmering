@@ -1,5 +1,6 @@
 from random import randint
 
+# Funksjon som sjekkar status på korta ein har fått i spelet så langt
 def sjekk21(sumKort):
   if sumKort == 21:
     print("Gratulerer, du fekk 21!")
