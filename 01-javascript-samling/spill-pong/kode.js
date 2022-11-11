@@ -146,5 +146,6 @@ document.onkeyup = function(evt) {
     if(tastekode === 38 && racket.yretning === -1) {
         racket.yretning = 0;}
     if(tastekode === 40 && racket.yretning === 1) {
-    racket.yretning = 0;}
+        racket.yretning = 0;
+    }
 }
